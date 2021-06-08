@@ -29,7 +29,7 @@ library(ggplot2)
 qplot(steps_per_day, binwidth = 2000, xlab = "steps", ylab = "frequency", main = "Total Number Of Steps Taken Per Day") + theme_bw()
 ```
 
-![image-1](http://127.0.0.1:32059/graphics/bafe2c08-bc82-48b5-a4ee-418d5b0cfcad.png) 
+![image-1](https://github.com/anishagarg5/RepData_PeerAssessment1/blob/master/figures/image-1.png) 
 ### 3. Calculate and report the mean and median of the total number of steps taken per day
 ```r
 mean(steps_per_day, na.rm = TRUE)
@@ -57,7 +57,7 @@ average <- aggregate(x = list(steps = data$steps), by = list(interval = data$int
 ggplot(average, aes(x = interval, y = steps)) + geom_line() + theme_bw() + xlab("5-minute interval") + ylab("average number of steps taken") + labs(title = "Average Daily Activity Pattern")
 ```
 
-![image-2](http://127.0.0.1:32059/graphics/7dc25da3-a00d-4ab1-badf-365396025853.png)
+![image-2](https://github.com/anishagarg5/RepData_PeerAssessment1/blob/master/figures/image-2.png)
 
 ### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 ```r
@@ -108,7 +108,7 @@ steps_per_day_no_na <- tapply(data_no_na$steps, data_no_na$date, sum)
 qplot(steps_per_day_no_na, binwidth = 2000, xlab = "steps", ylab = "frequency", main = "Total Number Of Steps Taken Per Day") + theme_bw()
 ```
 
-![image-4](http://127.0.0.1:32059/graphics/a3813d33-0b6b-4027-b59f-6a17c8ed8708.png) 
+![image-3](https://github.com/anishagarg5/RepData_PeerAssessment1/blob/master/figures/image-3.png) 
 
 ```r
 mean(steps_per_day_no_na)
@@ -151,4 +151,4 @@ average <- aggregate(steps ~ interval + day, data_no_na, mean)
 ggplot(average, aes(interval, steps)) + geom_line() + facet_grid(day ~ .) + theme_bw() + xlab("5-minute interval") + ylab("number of steps") + labs(title = "Average Weekend Weekday Activity")
 ```
 
-![image-6](http://127.0.0.1:32059/graphics/e3e7f099-596e-4890-8def-ad5d8de387d7.png) 
+![image-4](https://github.com/anishagarg5/RepData_PeerAssessment1/blob/master/figures/image-4.png) 
